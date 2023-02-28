@@ -372,7 +372,7 @@ use BaconQrCode\Writer;
                 $data = DB::table('parafs')->where('id',$id)->first();
             }
 
-            $qrcode = QrCode::generate($data->image);
+            $qrcode = QrCode::size(260)->generate($data->image);
 
             return view('admin.generate-qr', [
                 'item' => $data,
